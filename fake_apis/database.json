@@ -1,0 +1,10 @@
+{
+  "todos": [],
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Test user",
+      "number": "+92 3-- 25-----"
+    }
+  ]
+}

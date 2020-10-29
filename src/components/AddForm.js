@@ -9,7 +9,7 @@ import {
 } from 'react-redux'
 
 export default function AddForm() {
-    let [text, setText] = useState("");
+    let [text, setText] = useState();
     let dispatch = useDispatch();
 
     function addHandler(e) {
@@ -19,10 +19,10 @@ export default function AddForm() {
     }
     return (
         <form>
-          <input onChange={(e) => setText(e.target.value)} value={text} type="text" className="todo-input"/>
-          <button onClick={addHandler} className="todo-button" type="submit">
-            <i className="fas fa-plus-square"></i>
-          </button>
+            <input onChange={(e) => setText(e.target.value)} value={text} type="text" className="todo-input" />
+            <button onClick={addHandler} className="todo-button" type="submit">
+                <i className="fas fa-plus-square"></i>
+            </button>
         </form>
     )
 }

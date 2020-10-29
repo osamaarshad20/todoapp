@@ -4,11 +4,11 @@ import {
     useSelector
 } from 'react-redux'
 
-function ContactsPage(){
+function ContactsPage() {
     let contacts = useSelector(state => state.contacts)
     return (
         <div>
-            {contacts.map(contact => ( <Contact contact={contact} /> ))}
+            {contacts.map(contact => (<Contact contact={contact} />))}
         </div>
     )
 }

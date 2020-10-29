@@ -14,40 +14,38 @@ import {
 } from 'react-redux'
 
 
-function App() {
+const App = () => {
     let auth = useSelector(state => state.authorized)
     if (!auth) {
         return (
             <div >
-               <PageHeader / >
-               <hr / >
-               <LoginForm / >
+                <PageHeader />
+                <hr />
+                <LoginForm />
             </div>
         )
     } else {
         return (
             <Router >
-                <PageHeader / >
-                <hr / >
-                <Dashboard / >
+                <PageHeader />
+                <hr />
+                <Dashboard />
 
-                <Route path = "/todo"
-                component = {
-                    () => ( < TodoPage / > )
-                }
+                <Route path="/todo"
+                    component={
+                        () => (< TodoPage />)
+                    }
                 />
 
-                <Route path = "/contact"
-                component = {
-                    () => ( < ContactsPage / > )
-                }
+                <Route path="/contact"
+                    component={
+                        () => (< ContactsPage />)
+                    }
                 />
 
             </Router>
         )
     }
-
-
 }
 
 export default App;

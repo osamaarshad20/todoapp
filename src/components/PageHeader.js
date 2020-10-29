@@ -2,9 +2,9 @@ import React from 'react'
 
 function PageHeader() {
   return (
-  <div>
+    <div>
       <h1 className="header"> Todo App </h1>
-  </div>
+    </div>
   );
 }
 

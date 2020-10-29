@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Contact({contact}){
-    return (
+function Contact({ contact }) {
+  return (
     <div class="card">
       <div class="card-body">
         <label> Name: {contact.name}</label>
@@ -10,7 +10,7 @@ function Contact({contact}){
       </div>
     </div>
 
-    );
+  );
 }
 
 export default Contact;

@@ -1,16 +1,16 @@
-const fs = require('fs')
-const bodyParser = require('body-parser')
-const jsonServer = require('json-server')
+import { readFileSync } from 'fs'
+import { urlencoded, json } from 'body-parser'
+import { create, router as _router, defaults } from 'json-server'
 
-const server = jsonServer.create()
-const router = jsonServer.router('./database.json')
-const userdb = JSON.parse(fs.readFileSync('./users.json', 'UTF-8'))
+const server = create()
+const router = _router('./database.json')
+const userdb = JSON.parse(readFileSync('./users.json', 'UTF-8'))
 
-server.use(bodyParser.urlencoded({
+server.use(urlencoded({
     extended: true
 }))
-server.use(bodyParser.json())
-server.use(jsonServer.defaults());
+server.use(json())
+server.use(defaults());
 
 // Check if the user exists in database
 function isAuthenticated({

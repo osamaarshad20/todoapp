@@ -1,18 +1,9 @@
-export function addTodoAction(obj) {
-    return {
-        type: 'addTodos',
-        payload: {
-            obj
-        };
-    };
-}
-
 export function completeTodoAction(id) {
     return {
         type: 'completeTodos',
         payload: {
             id
-        };
+        }
     };
 }
 

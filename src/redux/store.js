@@ -8,17 +8,17 @@ import {
     fetchContactsData,
     setLoginState,
     deleteTodoAction,
-    addTodoAction,
     completeTodoAction
 } from './actions';
 import axios from 'axios';
+import * as urls from './urls';
 
 const thunkMiddleware = require('redux-thunk').default;
 
 //fetching todos from server
 const fetchTodos = () => {
-    return function(dispatch) {
-        axios.get('http://localhost:8000/todos')
+    return function (dispatch) {
+        axios.get(urls.TODOS)
             .then(response => {
                 dispatch(fetchTodosData(response.data))
             })
@@ -31,8 +31,8 @@ const fetchTodos = () => {
 
 //fetching contacts from server
 const fetchContacts = () => {
-    return function(dispatch) {
-        axios.get('http://localhost:8000/contacts')
+    return function (dispatch) {
+        axios.get(urls.CONTACTS)
             .then(response => {
                 dispatch(fetchContactsData(response.data))
             })
@@ -44,11 +44,11 @@ const fetchContacts = () => {
 }
 
 export function Login(email, password) {
-    return function(dispatch) {
-        axios.post('http://localhost:8000/auth/login', {
-                email: email,
-                password: password
-            })
+    return function (dispatch) {
+        axios.post(urls.LOGIN, {
+            email: email,
+            password: password
+        })
             .then(response => {
                 dispatch(setLoginState(response.data.authorized))
             })
@@ -59,8 +59,8 @@ export function Login(email, password) {
 }
 
 export function deleteTodo(id) {
-    return function(dispatch) {
-        axios.delete('http://localhost:8000/todos/' + id)
+    return function (dispatch) {
+        axios.delete(`${urls.TODOS}/${id}`)
             .then(response => {
                 dispatch(deleteTodoAction(id))
             })
@@ -71,11 +71,11 @@ export function deleteTodo(id) {
 }
 
 export function addTodo(desc) {
-    return function(dispatch) {
-        axios.post('http://localhost:8000/todos', {
-                'text': desc,
-                'complete': false
-            })
+    return function (dispatch) {
+        axios.post(urls.TODOS, {
+            'text': desc,
+            'complete': false
+        })
             .then(response => {
                 dispatch(fetchTodos())
             })
@@ -86,11 +86,11 @@ export function addTodo(desc) {
 }
 
 export function completeTodo(todo) {
-    return function(dispatch) {
-        axios.put('http://localhost:8000/todos/' + todo.id, {
-                ...todo,
-                'complete': !todo.complete
-            })
+    return function (dispatch) {
+        axios.put(`${urls.TODOS}/${todo.id}`, {
+            ...todo,
+            'complete': !todo.complete
+        })
             .then(response => {
                 dispatch(completeTodoAction(todo.id))
             })

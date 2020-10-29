@@ -3,7 +3,7 @@ import {
     Link
 } from "react-router-dom";
 
-function Dashboard(props){
+function Dashboard(props) {
     return (
         <div>
             <center>

@@ -2,7 +2,7 @@ import React from 'react';
 import AddForm from './AddForm'
 import TodoList from './TodoList'
 
-function TodoPage(){
+function TodoPage() {
     return (
         <div>
             < AddForm />

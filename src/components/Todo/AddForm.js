@@ -6,7 +6,7 @@ export default (AddForm) => {
   let [text, setText] = useState();
   let dispatch = useDispatch();
 
-  function addHandler(e) {
+  const addHandler = (e) => {
     e.preventDefault();
     dispatch(addTodo(text));
     setText("");

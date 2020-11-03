@@ -8,7 +8,7 @@ const LoginForm = () => {
     password = "";
   const dispatch = useDispatch();
 
-  function authHandler(e) {
+  const authHandler = (e) => {
     e.preventDefault();
     dispatch(Login(email.value, password.value));
     return;

@@ -1,3 +1,4 @@
-export const TODOS = 'http://localhost:8000/todos';
-export const CONTACTS = 'http://localhost:8000/contacts';
-export const LOGIN = 'http://localhost:8000/auth/login';
+const BASE_URL = 'http://localhost:8000/';
+export const TODOS = `${BASE_URL}todos`;
+export const CONTACTS = `${BASE_URL}contacts`;
+export const LOGIN = `${BASE_URL}login`;

@@ -1,5 +1,5 @@
 let initialState = {
-  authorized: false,
+  authorized: true,
   todos: [],
   contacts: [],
 };

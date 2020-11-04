@@ -14,34 +14,34 @@ const thunkMiddleware = require("redux-thunk").default;
 
 //fetching todos from server
 const fetchTodos = () => {
-  return function (dispatch) {
+  return ((dispatch) => {
     axios
       .get(urls.TODOS)
       .then((response) => {
         dispatch(fetchTodosData(response.data));
       })
       .catch((error) => {
-        console.log("Unable to fetch todos!");
+        console.error("Unable to fetch todos!");
       });
-  };
+  });
 };
 
 //fetching contacts from server
 const fetchContacts = () => {
-  return function (dispatch) {
+  return ((dispatch) => {
     axios
       .get(urls.CONTACTS)
       .then((response) => {
         dispatch(fetchContactsData(response.data));
       })
       .catch((error) => {
-        console.log("Unable to fetch contacts!");
+        console.error("Unable to fetch contacts!");
       });
-  };
+  });
 };
 
 export const Login = (email, password) => {
-  return function (dispatch) {
+  return ((dispatch) => {
     axios
       .post(urls.LOGIN, {
         email: email,
@@ -53,11 +53,11 @@ export const Login = (email, password) => {
       .catch((error) => {
         alert("Login Failed", "Email or Password is incorrect");
       });
-  };
+  });
 };
 
 export const deleteTodo = (id) => {
-  return function (dispatch) {
+  return ((dispatch) => {
     axios
       .delete(`${urls.TODOS}/${id}`)
       .then((response) => {
@@ -66,11 +66,11 @@ export const deleteTodo = (id) => {
       .catch((error) => {
         alert("Unable to delete!");
       });
-  };
+  });
 };
 
 export const addTodo = (desc) => {
-  return function (dispatch) {
+  return ((dispatch) => {
     axios
       .post(urls.TODOS, {
         text: desc,
@@ -82,11 +82,11 @@ export const addTodo = (desc) => {
       .catch((error) => {
         alert("Unable to add!");
       });
-  };
+  });
 };
 
 export const completeTodo = (todo) => {
-  return function (dispatch) {
+  return ((dispatch) => {
     axios
       .put(`${urls.TODOS}/${todo.id}`, {
         ...todo,
@@ -98,7 +98,7 @@ export const completeTodo = (todo) => {
       .catch((error) => {
         alert("Unable to update!");
       });
-  };
+  });
 };
 
 export const store = createStore(reducer, applyMiddleware(thunkMiddleware));

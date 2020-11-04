@@ -3,25 +3,25 @@ import { deleteTodo, completeTodo } from "../../redux/store";
 import { useDispatch } from "react-redux";
 import PropTypes from 'prop-types';
 
-const Todo = (props) => {
+const Todo = ({ todo }) => {
   let dispatch = useDispatch();
 
   const deleteHandler = () => {
-    dispatch(deleteTodo(props.todo.id));
+    dispatch(deleteTodo(todo.id));
   };
 
   const completeHandler = () => {
-    dispatch(completeTodo(props.todo));
+    dispatch(completeTodo(todo));
   };
-  if (!props.todo)
+  if (!todo)
   {
       alert("Props error:Props does't have todo object");
       return (<div className="todo"></div>);
   }
   return (
     <div className="todo">
-      <li className={props.todo.complete ? "todo-item completed" : "todo-item"}>
-        {props.todo.text}
+      <li className={todo.complete ? "todo-item completed" : "todo-item"}>
+        {todo.text}
       </li>
       <button onClick={completeHandler} className="complete-btn">
         <i className="fas fa-check" />

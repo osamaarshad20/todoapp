@@ -5,7 +5,7 @@ import { Login } from "../../redux/store";
 const LoginForm = () => {
   let error_message,
     email,
-    password = "";
+    password;
   const dispatch = useDispatch();
 
   const authHandler = (e) => {

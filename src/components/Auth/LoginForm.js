@@ -3,16 +3,14 @@ import { useDispatch } from "react-redux";
 import { Login } from "../../redux/store";
 
 const LoginForm = () => {
-  let error_message,
-    email,
-    password;
+  let error_message, email, password;
   const dispatch = useDispatch();
 
   const authHandler = (e) => {
     e.preventDefault();
     dispatch(Login(email.value, password.value));
     return;
-  }
+  };
 
   return (
     <div>

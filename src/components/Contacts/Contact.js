@@ -1,7 +1,6 @@
 import React from "react";
 
-const Contact = ({ contact }) => {
-  return (
+const Contact = ({ contact }) => (
     <div class="card">
       <div class="card-body">
         <label> Name: {contact.name}</label>
@@ -10,6 +9,5 @@ const Contact = ({ contact }) => {
       </div>
     </div>
   );
-};
 
 export default Contact;

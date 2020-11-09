@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Dashboard = (props) => {
-  return (
+const Dashboard = (props) => (
     <div>
       <center>
         <Link to="/contact">
@@ -15,6 +14,5 @@ const Dashboard = (props) => {
       </center>
     </div>
   );
-};
 
 export default Dashboard;

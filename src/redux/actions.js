@@ -16,6 +16,15 @@ export const deleteTodoAction = (id) => (
   }
 );
 
+export const deleteContactAction = (id) => (
+  {
+    type: "deleteContact",
+    payload: {
+      id,
+    },
+  }
+);
+
 export const Login = (email, password) => (
   {
     type: "login",

@@ -14,7 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const thunkMiddleware = require("redux-thunk").default;
 
-toast.configure();
+toast.configure() 
 
 const notify = (text, type) => {
   const TIME = 2500;
@@ -59,7 +59,7 @@ export const Login = (email, password) => (dispatch) => {
       dispatch(setLoginState(response.data.authorized));
     })
     .catch((error) => {
-      notify("Login Failed! : Email or Password wrong", "error");
+      notify("Login Failed! : Email or Password wrong", 'error');
     });
 };
 
@@ -70,7 +70,7 @@ export const deleteTodo = (id) => (dispatch) => {
       dispatch(deleteTodoAction(id));
     })
     .catch((error) => {
-      notify("Unable to delete!", "error");
+      notify("Unable to delete!", 'error');
     });
 };
 
@@ -84,7 +84,8 @@ export const addTodo = (desc) => (dispatch) => {
       dispatch(fetchTodos());
     })
     .catch((error) => {
-      notify("Unable to add!", "error");
+      notify("Unable to add!", 'error');
+      
     });
 };
 
@@ -96,9 +97,10 @@ export const completeTodo = (todo) => (dispatch) => {
     })
     .then((response) => {
       dispatch(completeTodoAction(todo.id));
+
     })
     .catch((error) => {
-      notify("Unable to update!", "error");
+      notify("Unable to update!", 'error');
     });
 };
 

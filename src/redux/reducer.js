@@ -43,6 +43,11 @@ const reducer = (state = initialState, action) => {
       ...state,
       todos: state.todos.filter((item) => item.id !== action.payload.id),
     };
+  } else if (action.type === "deleteContact") {
+    return {
+      ...state,
+      contacts: state.contacts.filter((item) => item.id !== action.payload.id),
+    };
   }
   return state;
 };

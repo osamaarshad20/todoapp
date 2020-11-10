@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { deleteContact } from "../../redux/store";
 import { useDispatch } from "react-redux";
-import { Input, Form, Button } from "../styles";
+import { Input, Form, Button } from "../../styles/componentStyles";
 
 const Contact = ({ contact }) => {
   const READONLY = true;

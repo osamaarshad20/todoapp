@@ -2,7 +2,7 @@ import React from "react";
 import { deleteTodo, completeTodo } from "../../redux/store";
 import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
-import { Button, Div, Li } from "../styles";
+import { Button, Div, Li } from "../../styles/componentStyles";
 
 const Todo = ({ todo }) => {
   let dispatch = useDispatch();

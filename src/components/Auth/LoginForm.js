@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Login } from "../../redux/store";
-import { Button, Input, Form } from "../styles";
+import { Button, Input, Form } from "../../styles/componentStyles";
 
 const LoginForm = () => {
   let error_message, email, password;

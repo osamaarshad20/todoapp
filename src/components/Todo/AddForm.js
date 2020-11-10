@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { addTodo } from "../../redux/store";
 import { useDispatch } from "react-redux";
-import { Button, Input, Form } from "../styles";
+import { Button, Input, Form } from "../../styles/componentStyles";
 
 export default (AddForm) => {
   let [text, setText] = useState();

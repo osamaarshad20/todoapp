@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { addTodo } from "../../redux/store";
 import { useDispatch } from "react-redux";
+import { Button, Input, Form } from "../styles";
 
 export default (AddForm) => {
   let [text, setText] = useState();
@@ -10,18 +11,17 @@ export default (AddForm) => {
     e.preventDefault();
     dispatch(addTodo(text));
     setText("");
-  }
+  };
   return (
-    <form>
-      <input
+    <Form>
+      <Input
         onChange={(e) => setText(e.target.value)}
         value={text}
         type="text"
-        className="todo-input"
       />
-      <button onClick={addHandler} className="todo-button" type="submit">
+      <Button onClick={addHandler} todo>
         <i className="fas fa-plus-square"></i>
-      </button>
-    </form>
+      </Button>
+    </Form>
   );
 };

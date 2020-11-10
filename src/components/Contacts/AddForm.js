@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { addContact } from "../../redux/store";
 import { useDispatch } from "react-redux";
+import { Button, Input, Form } from "../styles";
 
 export default (AddForm) => {
   let [name, setName] = useState();
@@ -14,25 +15,24 @@ export default (AddForm) => {
     setNumber("");
   };
   return (
-    <form>
-      <input
+    <Form>
+      <Input
         onChange={(e) => setName(e.target.value)}
         value={name}
         type="text"
         className="todo-input"
         placeholder="Name"
       />
-      <input
+      <Input
         onChange={(e) => setNumber(e.target.value)}
         value={number}
         type="text"
-        className="todo-input"
         placeholder="Number"
       />
 
-      <button onClick={addHandler} className="todo-button" type="submit">
+      <Button onClick={addHandler}>
         <i className="fas fa-plus-square"></i>
-      </button>
-    </form>
+      </Button>
+    </Form>
   );
 };

@@ -30,7 +30,7 @@ export default (AddForm) => {
         placeholder="Number"
       />
 
-      <Button onClick={addHandler}>
+      <Button onClick={addHandler} todo>
         <i className="fas fa-plus-square"></i>
       </Button>
     </Form>

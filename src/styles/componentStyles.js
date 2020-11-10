@@ -57,7 +57,7 @@ export const Form = styled.form`
 
 export const H1 = styled.h1`
   text-align: center;
-  background: #e6e6e6;
+  background: transparent;
   padding: 1%;
   margin: 0;
 `;

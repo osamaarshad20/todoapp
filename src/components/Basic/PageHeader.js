@@ -1,9 +1,10 @@
 import React from "react";
+import { H1 } from "../../styles/componentStyles";
 
 const PageHeader = () => (
-    <div>
-      <h1 className="header"> Todo App </h1>
-    </div>
-  );
+  <div>
+    <H1>Todo App</H1>
+  </div>
+);
 
 export default PageHeader;

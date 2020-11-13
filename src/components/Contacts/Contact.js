@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { deleteContact } from "../../redux/store";
 import { useDispatch } from "react-redux";
+import { Input, Form, Button } from "../../styles/componentStyles";
 
 const Contact = ({ contact }) => {
   const READONLY = true;
@@ -10,18 +11,14 @@ const Contact = ({ contact }) => {
     dispatch(deleteContact(contact.id));
   };
   return (
-    <div class="card">
-      <div class="card-body">
-        <form>
-          <input value={contact.name} readOnly={READONLY} />
-          <input value={contact.number} readOnly={READONLY} />
-          <button onClick={deleteHandler} className="trash-btn">
-            <i className="fas fa-trash" />
-          </button>
-        </form>
-      </div>
+    <Form>
+      <Input value={contact.name} readOnly={READONLY} />
+      <Input value={contact.number} readOnly={READONLY} />
+      <Button onClick={deleteHandler} trash>
+        <i className="fas fa-trash" />
+      </Button>
       <hr />
-    </div>
+    </Form>
   );
 };
 

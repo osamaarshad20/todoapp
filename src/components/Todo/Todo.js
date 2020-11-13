@@ -1,7 +1,8 @@
 import React from "react";
 import { deleteTodo, completeTodo } from "../../redux/store";
 import { useDispatch } from "react-redux";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import { Button, Div, Li } from "../../styles/componentStyles";
 
 const Todo = ({ todo }) => {
   let dispatch = useDispatch();
@@ -13,29 +14,27 @@ const Todo = ({ todo }) => {
   const completeHandler = () => {
     dispatch(completeTodo(todo));
   };
-  if (!todo)
-  {
-      alert("Props error:Props does't have todo object");
-      return (<div className="todo"></div>);
+  if (!todo) {
+    alert("Props error:Props does't have todo object");
+    return <div className="todo"></div>;
   }
   return (
-    <div className="todo">
-      <li className={todo.complete ? "todo-item completed" : "todo-item"}>
+    <Div todo>
+      <Li complete={todo.complete} todoitem todolist>
         {todo.text}
-      </li>
-      <button onClick={completeHandler} className="complete-btn">
+      </Li>
+      <Button onClick={completeHandler} complete>
         <i className="fas fa-check" />
-      </button>
-      <button onClick={deleteHandler} className="trash-btn">
+      </Button>
+      <Button onClick={deleteHandler} trash>
         <i className="fas fa-trash" />
-      </button>
-    </div>
+      </Button>
+    </Div>
   );
 };
 
-
 Todo.propTypes = {
-  todo: PropTypes.object
-}
+  todo: PropTypes.object,
+};
 
 export default Todo;

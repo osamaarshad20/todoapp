@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Contact from "./Contact";
-import { useSelector } from "react-redux";
+import { GlobalContext } from "../../context/context";
 
 const ContactList = () => {
-  let contacts = useSelector((state) => state.contacts);
+  const { state } = useContext(GlobalContext);
+  const contacts = state.contacts;
 
   return (
     <div>

@@ -1,15 +1,14 @@
-import React, { useState } from "react";
-import { addTodo } from "../../redux/store";
-import { useDispatch } from "react-redux";
+import React, { useState, useContext } from "react";
+import { GlobalContext } from "../../context/context";
 import { Button, Input, Form } from "../../styles/componentStyles";
 
 export default (AddForm) => {
   let [text, setText] = useState();
-  let dispatch = useDispatch();
+  let { addTodo } = useContext(GlobalContext);
 
   const addHandler = (e) => {
     e.preventDefault();
-    dispatch(addTodo(text));
+    addTodo(text);
     setText("");
   };
   return (

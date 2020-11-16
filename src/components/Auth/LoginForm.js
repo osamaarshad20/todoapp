@@ -1,15 +1,14 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { Login } from "../../redux/store";
+import React, { useContext } from "react";
+import { GlobalContext } from "../../context/context";
 import { Button, Input, Form } from "../../styles/componentStyles";
 
 const LoginForm = () => {
   let error_message, email, password;
-  const dispatch = useDispatch();
+  const { Login } = useContext(GlobalContext);
 
   const authHandler = (e) => {
+    Login(email.value, password.value);
     e.preventDefault();
-    dispatch(Login(email.value, password.value));
     return;
   };
 

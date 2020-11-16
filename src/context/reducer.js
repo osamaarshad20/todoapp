@@ -1,10 +1,10 @@
-let initialState = {
+export let initialState = {
   authorized: false,
   todos: [],
   contacts: [],
 };
 
-const reducer = (state = initialState, action) => {
+export const reducer = (state, action) => {
   if (action.type === "fetchTodoData") {
     return {
       ...state,
@@ -51,5 +51,3 @@ const reducer = (state = initialState, action) => {
   }
   return state;
 };
-
-export default reducer;

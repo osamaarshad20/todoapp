@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import Todo from "./Todo";
-import { useSelector } from "react-redux";
+import { GlobalContext } from "../../context/context";
 import { Div, Ul } from "../../styles/componentStyles";
 
 const TodoList = () => {
-  let todos = useSelector((state) => state.todos);
+  const { state } = useContext(GlobalContext);
+  const todos = state.todos;
 
   return (
     <Div todocontainer>

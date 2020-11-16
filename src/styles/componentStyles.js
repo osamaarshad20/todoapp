@@ -107,7 +107,7 @@ export const Li = styled.li`
     `};
 
   ${(props) =>
-    props.complete == true &&
+    props.complete === true &&
     css`
       text-decoration: line-through;
       opacity: 0.5;

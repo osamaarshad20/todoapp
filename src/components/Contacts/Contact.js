@@ -1,14 +1,13 @@
-import React, { useState } from "react";
-import { deleteContact } from "../../redux/store";
-import { useDispatch } from "react-redux";
+import React, { useContext } from "react";
+import { GlobalContext } from "../../context/context";
 import { Input, Form, Button } from "../../styles/componentStyles";
 
 const Contact = ({ contact }) => {
   const READONLY = true;
-  let dispatch = useDispatch();
+  let { deleteContact } = useContext(GlobalContext);
 
   const deleteHandler = () => {
-    dispatch(deleteContact(contact.id));
+    deleteContact(contact.id);
   };
   return (
     <Form>

@@ -1,16 +1,15 @@
-import React, { useState } from "react";
-import { addContact } from "../../redux/store";
-import { useDispatch } from "react-redux";
+import React, { useState, useContext } from "react";
+import { GlobalContext } from "../../context/context";
 import { Button, Input, Form } from "../../styles/componentStyles";
 
 export default (AddForm) => {
   let [name, setName] = useState();
   let [number, setNumber] = useState();
-  let dispatch = useDispatch();
+  const { addContact } = useContext(GlobalContext);
 
   const addHandler = (e) => {
     e.preventDefault();
-    dispatch(addContact(name, number));
+    addContact(name, number);
     setName("");
     setNumber("");
   };

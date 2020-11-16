@@ -1,18 +1,17 @@
-import React from "react";
-import { deleteTodo, completeTodo } from "../../redux/store";
-import { useDispatch } from "react-redux";
+import React, { useContext } from "react";
+import { GlobalContext } from "../../context/context";
 import PropTypes from "prop-types";
 import { Button, Div, Li } from "../../styles/componentStyles";
 
 const Todo = ({ todo }) => {
-  let dispatch = useDispatch();
+  let { deleteTodo, completeTodo } = useContext(GlobalContext);
 
   const deleteHandler = () => {
-    dispatch(deleteTodo(todo.id));
+    deleteTodo(todo.id);
   };
 
   const completeHandler = () => {
-    dispatch(completeTodo(todo));
+    completeTodo(todo);
   };
   if (!todo) {
     alert("Props error:Props does't have todo object");
